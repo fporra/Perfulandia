@@ -18,7 +18,7 @@ public class UsuarioController {
 
     @GetMapping
     public ResponseEntity<List<Usuario>> listar() {
-        List<Usuario> usuarios = usuarioService.finAll(); // Cambiado a finAll()
+        List<Usuario> usuarios = usuarioService.finAll(); 
         if (usuarios.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
@@ -27,7 +27,7 @@ public class UsuarioController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> obtenerPorId(@PathVariable Long id) {
-        Usuario usuario = usuarioService.findById(id); // Cambiado a findById()
+        Usuario usuario = usuarioService.findById(id); 
         return usuario != null 
                 ? ResponseEntity.ok(usuario) 
                 : ResponseEntity.notFound().build();
@@ -35,13 +35,13 @@ public class UsuarioController {
 
     @PostMapping
     public ResponseEntity<Usuario> guardar(@RequestBody Usuario usuario) {
-        Usuario nuevo = usuarioService.save(usuario); // Sin cambios
+        Usuario nuevo = usuarioService.save(usuario); 
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevo);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-        usuarioService.delete(id); // Sin cambios
+        usuarioService.delete(id); 
         return ResponseEntity.noContent().build();
     }
     @PutMapping("/{id}")
@@ -50,7 +50,7 @@ public ResponseEntity<Usuario> actualizar(@PathVariable Long id, @RequestBody Us
     if (usuarioExistente == null) {
         return ResponseEntity.notFound().build();
     }
-    // Actualiza los campos necesarios
+  
     usuarioExistente.setNombre(usuarioActualizado.getNombre());
     usuarioExistente.setEmail(usuarioActualizado.getEmail());
     usuarioExistente.setActivo(usuarioActualizado.getActivo());
@@ -68,7 +68,7 @@ public ResponseEntity<Usuario> actualizar(@PathVariable Long id, @RequestBody Us
         return ResponseEntity.ok(usuarios);
     }
 
-    // Obtener usuarios inactivos
+ 
     @GetMapping("/inactivos")
     public ResponseEntity<List<Usuario>> getUsuariosInactivos() {
         List<Usuario> usuariosInactivos = usuarioService.getUsuariosInactivos();
