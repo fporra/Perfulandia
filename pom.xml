@@ -24,33 +24,33 @@
 
     <dependencies>
 
-        <!-- Spring Web (para crear APIs REST) -->
+      
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Spring Data JPA (para trabajar con base de datos usando Hibernate) -->
+      
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- MySQL Driver (conexión a base de datos MySQL) -->
+   
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Jakarta Persistence API (estándar JPA 3.1) -->
+      
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
             <version>3.1.0</version>
         </dependency>
 
-        <!-- Lombok (anotaciones como @Data, @Getter, etc.) -->
+    
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -58,13 +58,13 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Dependencias para pruebas unitarias -->
+     
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
             <exclusions>
-                <!-- Para evitar conflictos con versiones antiguas de JUnit -->
+        
                 <exclusion>
                     <groupId>org.junit.vintage</groupId>
                     <artifactId>junit-vintage-engine</artifactId>
@@ -76,7 +76,7 @@
 
     <build>
         <plugins>
-            <!-- Plugin para ejecutar Spring Boot con Maven -->
+    
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
